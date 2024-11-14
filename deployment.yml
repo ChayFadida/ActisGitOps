@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: actis-deployments
+  namespace: actis
+  labels:
+    app: chay-techs
+    environment: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: actis-website
+  template:
+    metadata:
+      labels:
+        app: actis-website
+        environment: production
+    spec:
+      containers:
+        - name: chay-techs
+          image: harbor.chay-techs.com/actis/website:1.0.0
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: harbor-registry-key
