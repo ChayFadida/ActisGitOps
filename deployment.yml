@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: actis-deployments
-  namespace: actis
+  namespace: actis-development
   labels:
-    app: chay-techs
-    environment: production
+    app: actis
+    environment: development
 spec:
   replicas: 3
   selector:
@@ -15,10 +15,10 @@ spec:
     metadata:
       labels:
         app: actis-website
-        environment: production
+        environment: development
     spec:
       containers:
-        - name: chay-techs
+        - name: actis-website
           image: harbor.chay-techs.com/actis/website:1.0.0
           ports:
             - containerPort: 3000
