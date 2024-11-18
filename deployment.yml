@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: chay-techs
-          image: harbor.chay-techs.com/actis/website:master_98d593d
+          image: harbor.chay-techs.com/actis/website:master_5971170
           ports:
             - containerPort: 3000
       imagePullSecrets:
