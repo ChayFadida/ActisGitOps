@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: actis-website
-          image: harbor.chay-techs.com/actis/website:develop_7132923
+          image: harbor.chay-techs.com/actis/website:develop_5699df5
           ports:
             - containerPort: 3000
       imagePullSecrets:
