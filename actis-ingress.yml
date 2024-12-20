@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: actis-ingress-iil
+  namespace: actis
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - actis.co.il
+    secretName: ingress-tls-ssl-actis
+  rules:
+  - host: actis.co.il
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: actis-service
+            port:
+              number: 80
