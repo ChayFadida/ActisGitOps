@@ -9,9 +9,20 @@ spec:
   tls:
   - hosts:
     - actis.co.il
+    - www.actis.co.il
     secretName: ingress-tls-ssl-actis
   rules:
   - host: actis.co.il
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: actis-service
+            port:
+              number: 80
+  - host: www.actis.co.il
     http:
       paths:
       - path: /
